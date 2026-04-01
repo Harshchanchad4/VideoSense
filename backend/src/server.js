@@ -95,11 +95,11 @@ app.use((err, req, res, next) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 
-connectDB().then(() => {
-  httpServer.listen(PORT, () => {
-    console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
-    console.log(`API: http://localhost:${PORT}/api`);
-  });
+httpServer.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
+  console.log(`API: http://localhost:${PORT}/api`);
 });
+
+connectDB();
 
 module.exports = { app, httpServer };
